@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中華電信登入系統</title>
+  <meta property="og:url" content="https://member.cht.com.tw/">
+  <meta property="og:description" content="使用者生日禮：屬於您的日子裡，來自中華電信最誠摯的祝福，還有機會獲得精選生日好禮, HamiPoint：參加活動就有機會獲得HamiPoint點數，超過10萬件熱門商品任您兌換！使用者好康：使用者好康服務和專屬活動任你玩，還有各項超值優惠與回饋，讓你賺好康！ | 中華電信官網 CHT.com.tw">
+  <meta property="og:image" content="https://web-eshop.cdn.hinet.net/Web/Images/Logo/CHT_logo.jpg">
+  <meta property="og:type" content="website" />
+
+  <!-- faicon -->
+  <link rel="icon" href="https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="192x192" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_192x192.png">
+  <link rel="icon" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link rel="apple-touch-icon-precomposed" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 使用者中心原 css -->
+  <link rel="stylesheet" href="/public/2.0.0/css/style.css">      
+  <link rel="stylesheet" type="text/css" href="https://www.cht.com.tw/home/eshop/css/rwd.css" />
+  <!-- 190808 cht官網樣式 custom -->
+  <link rel="stylesheet" href="/public/4.0.0/css/cht-style.css">
+
+  <!-- javascript def -->
+  <script src="/public/4.0.0/js/vendor.js"></script>
+  <script type="text/javascript" src="/public/2.0.0/js/bootstrap.min.js"></script>
+    
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .login-container h1 {
+      margin-bottom: 20px;
+    }
+    .nav-tabs {
+      border-bottom: 2px solid #ddd;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      border-color: #ddd #ddd #fff;
+    }
+    .form-group img {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+    }
+    .footer {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    text-align: center;
+    }
+
+    .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .footer .misc-links p,
+    .footer .official-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+    .footer .misc-links a,
+    .footer .official-links a {
+    margin: 0 10px;
+    }
+
+    /* .footer .official-links img {
+    max-width: 80px;
+    height: auto;
+    } */
+
+    .footer .copyright {
+    margin-top: 10px;
+    font-size: 0.875em;
+    }
+    .btn-custom {
+    background-color: #3399ff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 40px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px 0;
+    cursor: pointer;
+    }
+
+    .btn-custom:hover {
+    background-color: #267abf;
+    }
+  </style>
+</head>
+<!-- 190808 cht官網樣式 body 加 class="cht-style" 區分-->
+<body class="cht-style">
+  <!-- 190808 cht官網樣式 header -->
+  <!-- header -->
+  <section class="is-regular" id="header">
+    <header class="nav-global-header">
+      <h1 style="display:none"></h1>
+      <nav class="nav-global">
+        <div class="logo-section">
+          <a class="logo" href="https://www.cht.com.tw/home/consumer"></a>
+        </div>
+      </nav>
+    </header>
+  </section>
+  <section class="header-spacer">for space in mobile</section>
+  <div class="container">
+    <div class="login-container">
+      <ul class="nav nav-tabs" id="loginTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="member-tab" data-toggle="tab" href="#member" role="tab" aria-controls="member" aria-selected="true">使用者登入</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="simple-tab" data-toggle="tab" href="#simple" role="tab" aria-controls="simple" aria-selected="false">忘記密碼</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="smart" aria-selected="false">使用者註冊</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="loginTabContent">
+        <div class="tab-pane fade show active" id="member" role="tabpanel" aria-labelledby="member-tab">
+          <form>
+            <div class="form-group">
+              <label for="username">電子郵件</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入Email">
+            </div>
+            <div class="form-group">
+              <label for="password">密碼</label>
+              <input type="password" class="form-control" id="password" placeholder="請輸入密碼">
+            </div>
+            <div class="form-group">
+              <label for="captcha">OTP驗證碼</label>
+              <input type="text" class="form-control" id="captcha" placeholder="請輸入OTP驗證碼">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">保持登入狀態30天（公開電腦不建議使用）</label>
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">取得OTP驗證碼</button>
+            <button type="submit" class="btn btn-custom btn-block">登入</button>
+          </form>
+          <div class="text-center mt-3">
+            <a href="#simple">忘記密碼？</a>
+          </div>
+          <div class="text-center mt-2">
+            <a href="#signup">還不是使用者？立即註冊</a>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="simple" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 簡訊驗證碼登入表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">電子郵件</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入Email">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">發送OTP驗證碼</button>
+          </form>
+          <!-- 這裡可以添加簡訊驗證碼的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="smart-tab">
+          <!-- 使用者註冊表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">電子郵件</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入Email">
+            </div>
+            <div class="form-group">
+              <label for="password">確認電子郵件</label>
+              <input type="password" class="form-control" id="password" placeholder="請再次輸入Email">
+            </div>
+            <div class="form-group">
+              <label for="captcha">手機號碼(可選填)</label>
+              <input type="text" class="form-control" id="captcha" placeholder="請輸入手機號碼">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">發送OTP驗證碼</button>
+          </form>
+          <!-- 這裡可以添加使用者註冊的相關表單 -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 190808 cht官網樣式 footer -->
+  <!-- footer -->
+  <section class="footer" id="footer">
+    <div class="footer-container">
+      <div class="nekos">
+        <div class="misc-links">
+          <p>
+            <a href="/html/MemberCenter2/agreement_membercenter.html" target="new">中華電信使用者條款</a>
+            <a href="/html/MemberCenter2/privacy.html" target="new">隱私權聲明</a>
+            <a href="https://www.cht.com.tw/en/home/consumer/other/sitemap" target="new">網站地圖</a>
+            <a onclick="javascript:window.open('https://cht.tw/c/wg407');return false;" data-click="g-gtm,g-page-event" href="javascript:void(0);">中華電信APP</a>
+          </p>
+        </div>
+      </div>
+      <div class="nekos">
+        <div class="official-links">
+          <a href="https://www.cht.com.tw/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/cht.png" alt=""></a>
+          <a href="https://www.cht.com.tw/home/consumer/mod-ott/promo/modpromo" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/mod.png" alt=""></a>
+          <a href="https://www.emome.net/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/emome.png" alt=""></a>
+          <a href="https://www.hinet.net/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/hinet.png" alt=""></a>
+        </div>
+        <div class="copyright">
+          <p class="miniature">中華電信股份有限公司版權所有 &#169; Chunghwa Telecom Co., Ltd. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- /footer -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
