@@ -136,6 +136,12 @@
         <li class="nav-item">
           <a class="nav-link" id="smart-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="smart" aria-selected="false">使用者註冊</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#keybind" role="tab" aria-controls="smart" aria-selected="false">公鑰綁定</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#keysignin" role="tab" aria-controls="smart" aria-selected="false">公鑰綁定登入</a>
+        </li>
       </ul>
       <div class="tab-content" id="loginTabContent">
         <div class="tab-pane fade show active" id="member" role="tabpanel" aria-labelledby="member-tab">
@@ -195,6 +201,32 @@
             <button type="submit" class="btn btn-custom btn-block">發送OTP驗證碼</button>
           </form>
           <!-- 這裡可以添加使用者註冊的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="keybind" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 公鑰綁定登入表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">公鑰序號</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入pubkey">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">綁定公鑰</button>
+          </form>
+          <!-- 這裡可以添加公鑰綁定的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="keysignin" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 公鑰綁定登入登入表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">P7簽章</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入P7簽章">
+            </div>
+            <div class="form-group">
+              <label for="username">憑證序號</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入憑證序號">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">登入</button>
+          </form>
+          <!-- 這裡可以添加公鑰綁定登入的相關表單 -->
         </div>
       </div>
     </div>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>授權使用者簽章</title>
+  <meta property="og:url" content="https://member.cht.com.tw/">
+  <meta property="og:description" content="授權使用者簽章">
+  <meta property="og:image" content="https://web-eshop.cdn.hinet.net/Web/Images/Logo/CHT_logo.jpg">
+  <meta property="og:type" content="website" />
+
+  <!-- faicon -->
+  <link rel="icon" href="https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="192x192" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_192x192.png">
+  <link rel="icon" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link rel="apple-touch-icon-precomposed" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 使用者中心原 css -->
+  <link rel="stylesheet" href="/public/2.0.0/css/style.css">      
+  <link rel="stylesheet" type="text/css" href="https://www.cht.com.tw/home/eshop/css/rwd.css" />
+  <!-- 190808 cht官網樣式 custom -->
+  <link rel="stylesheet" href="/public/4.0.0/css/cht-style.css">
+
+  <!-- javascript def -->
+  <script src="/public/4.0.0/js/vendor.js"></script>
+  <script type="text/javascript" src="/public/2.0.0/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        padding-top: 100px; /* 確保container在header下面 */
+    }
+
+    .form-control {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .form-control {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .login-container h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .nav-tabs {
+        border-bottom: 2px solid #ddd;
+    }
+
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        border-color: #ddd #ddd #fff;
+    }
+
+    .form-group img {
+        width: 100%;
+        max-width: 100px;
+        height: auto;
+    }
+
+    .footer {
+        background-color: #f7f7f7;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .misc-links p,
+    .footer .official-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer .misc-links a,
+    .footer .official-links a {
+        margin: 0 10px;
+    }
+
+    .footer .copyright {
+        margin-top: 10px;
+        font-size: 0.875em;
+    }
+
+    .btn-custom {
+        background-color: #3399ff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 40px;
+        text-align: center;
+        display: inline-block;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    .btn-custom:hover {
+        background-color: #267abf;
+    }
+
+    .text-center {
+        font-weight: bold;
+    }
+    .tablist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    .tablist li {
+        margin: 0 10px 10px 0;
+    }
+    .tablist a {
+        display: block;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #007bff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .tablist a:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>
+</head>
+<body class="cht-style">
+  <!-- 190808 cht官網樣式 header -->
+  <!-- header -->
+  <section class="is-regular" id="header">
+    <header class="nav-global-header">
+      <h1 style="display:none"></h1>
+      <nav class="nav-global">
+        <div class="logo-section">
+          <a class="logo" href="https://www.cht.com.tw/home/consumer"></a>
+        </div>
+      </nav>
+    </header>
+  </section>
+  <div class="container">
+    <div class="login-container">
+      <select id="formSelector" onchange="showForm()">
+        <option value="">請選擇一個選項</option>
+        <option value="form1">授權使用者簽章</option>
+        <option value="form2">User簽署</option>
+        <option value="form3">User簽署多筆資料</option>
+        <option value="form4">AP以證換證雲端憑證申請</option>
+        <option value="form5">合作夥伴使用者憑證申請</option>
+        <option value="form6">AP簽署</option>
+      </select>
+      <ul class="nav nav-tabs tablist" id="loginTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="member-tab" data-toggle="tab" href="#userRequestTicket" role="tab" aria-controls="member" aria-selected="true">授權使用者簽章</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="simple-tab" data-toggle="tab" href="#UserSign" role="tab" aria-controls="simple" aria-selected="false">User簽署</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#UserSignList" role="tab" aria-controls="smart" aria-selected="false">User簽署多筆資料</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#CloudCertApply" role="tab" aria-controls="smart" aria-selected="false">AP以證換證雲端憑證申請</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#APUserCloudCertApply" role="tab" aria-controls="smart" aria-selected="false">合作夥伴使用者憑證申請</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="smart-tab" data-toggle="tab" href="#APSign" role="tab" aria-controls="smart" aria-selected="false">AP簽署</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="loginTabContent">
+        <div class="tab-pane fade show active" id="userRequestTicket" role="tabpanel" aria-labelledby="member-tab">
+            <!-- <h1 class="text-center">授權使用者簽章</h1> -->
+            <form>
+              <div class="form-group">
+                <label for="email">電子郵件</label>
+                <input type="text" class="form-control" id="email" placeholder="請輸入email" >
+              </div>
+              <div class="form-group">
+                  <label for="username">授權類型</label>
+                  <input type="text" class="form-control" id="username" placeholder="請輸入授權類型">
+              </div>
+              <div class="form-group">
+                <label for="username">憑證序號</label>
+                <input type="password" class="form-control" id="username" placeholder="請輸入憑證序號">
+              </div>
+              <button type="submit" class="btn btn-custom btn-block">簽章</button>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="UserSign" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 簡訊驗證碼登入表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">電子郵件</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入Email">
+            </div>
+            <div class="form-group">
+                <label for="username">資料</label>
+                <input type="text" class="form-control" id="username" placeholder="請輸入資料">
+            </div>
+            <div class="form-group">
+              <label for="username">tid</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入tid">
+            </div>
+            <div class="form-group">
+                <label for="username">uid</label>
+                <input type="text" class="form-control" id="username" placeholder="請輸入uid">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">簽章</button>
+          </form>
+          <!-- 這裡可以添加簡訊驗證碼的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="UserSignList" role="tabpanel" aria-labelledby="smart-tab">
+            <!-- 使用者註冊表單 -->
+            <form id="userForm">
+              <div class="form-group">
+                <label for="email">電子郵件</label>
+                <input type="text" class="form-control" id="email" placeholder="請輸入Email">
+              </div>
+              <div id="dataFields">
+                <div class="form-group data-field">
+                  <label for="data1">資料</label>
+                  <input type="text" class="form-control" id="data1" placeholder="請輸入data">
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-secondary" id="addDataField">新增資料</button>
+                <button type="button" class="btn btn-secondary" id="removeDataField">移除資料</button>
+              </div>
+              <div class="form-group">
+                <label for="tid">tid</label>
+                <input type="text" class="form-control" id="tid" placeholder="請輸入tid">
+              </div>
+              <div class="form-group">
+                <label for="uid">uid</label>
+                <input type="text" class="form-control" id="uid" placeholder="請輸入uid">
+              </div>
+              <button type="submit" class="btn btn-custom btn-block">簽章</button>
+            </form>
+            <!-- 這裡可以添加使用者註冊的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="CloudCertApply" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 公鑰綁定登入表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">P7簽章</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入P7簽章">
+            </div>
+            <div class="form-group">
+              <label for="username">憑證序號</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入憑證序號">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">申請</button>
+          </form>
+          <!-- 這裡可以添加公鑰綁定的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="APUserCloudCertApply" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 公鑰綁定登入登入表單 -->
+          <form>
+            <div class="form-group">
+                <label for="username">電子郵件</label>
+                <input type="text" class="form-control" id="email" placeholder="請輸入email">
+            </div>
+            <div class="form-group">
+                <label for="p7signature">P7簽章</label>
+                <input type="text" class="form-control" id="p7signature" placeholder="請輸入P7簽章">
+            </div>
+            <div class="form-group">
+                <label for="certSerialNumber">憑證序號</label>
+                <input type="text" class="form-control" id="certSerialNumber" placeholder="請輸入憑證序號">
+            </div>
+            <div class="form-group">
+                <label for="clusterid">clusterid</label>
+                <input type="text" class="form-control" id="clusterid" placeholder="請輸入clusterid">
+            </div>
+            <div class="form-group">
+                <label for="validPIN">validPIN</label>
+                <input type="text" class="form-control" id="validPIN" placeholder="請輸入validPIN">
+            </div>
+            <div class="form-group">
+                <label for="certApplicationCode">憑證申請碼</label>
+                <input type="text" class="form-control" id="certApplicationCode" placeholder="請輸入憑證申請碼">
+            </div>
+            <div class="form-group">
+              <label for="certType">憑證類別</label>
+              <select class="form-control" id="certType">
+                  <option value="">請選擇憑證類別</option>
+                  <option value="type1">類別1</option>
+                  <option value="type2">類別2</option>
+                  <option value="type3">類別3</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="serviceId">Service ID</label>
+                <input type="text" class="form-control" id="serviceId" placeholder="請輸入Service ID">
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="getCertApplicationCode()">取憑證申請碼</button>
+            <button type="submit" class="btn btn-custom btn-block">申請</button>
+          </form>
+          <!-- 這裡可以添加公鑰綁定登入的相關表單 -->
+        </div>
+        <div class="tab-pane fade" id="APSign" role="tabpanel" aria-labelledby="simple-tab">
+            <!-- 公鑰綁定登入登入表單 -->
+            <form>
+              <div class="form-group">
+                <label for="username">P7簽章</label>
+                <input type="text" class="form-control" id="username" placeholder="請輸入P7簽章">
+              </div>
+              <div class="form-group">
+                <label for="username">憑證序號</label>
+                <input type="text" class="form-control" id="username" placeholder="請輸入憑證序號">
+              </div>
+              <button type="submit" class="btn btn-custom btn-block">簽章</button>
+            </form>
+            <!-- 這裡可以添加公鑰綁定登入的相關表單 -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 190808 cht官網樣式 footer -->
+  <!-- footer -->
+  <section class="footer" id="footer">
+    <div class="footer-container">
+      <div class="nekos">
+        <div class="misc-links">
+          <p>
+            <a href="/html/MemberCenter2/agreement_membercenter.html" target="new">中華電信使用者條款</a>
+            <a href="/html/MemberCenter2/privacy.html" target="new">隱私權聲明</a>
+            <a href="https://www.cht.com.tw/en/home/consumer/other/sitemap" target="new">網站地圖</a>
+            <a onclick="javascript:window.open('https://cht.tw/c/wg407');return false;" data-click="g-gtm,g-page-event" href="javascript:void(0);">中華電信APP</a>
+          </p>
+        </div>
+      </div>
+      <div class="nekos">
+        <div class="official-links">
+          <a href="https://www.cht.com.tw/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/cht.png" alt=""></a>
+          <a href="https://www.cht.com.tw/home/consumer/mod-ott/promo/modpromo" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/mod.png" alt=""></a>
+          <a href="https://www.emome.net/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/emome.png" alt=""></a>
+          <a href="https://www.hinet.net/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/hinet.png" alt=""></a>
+        </div>
+        <div class="copyright">
+          <p class="miniature">中華電信股份有限公司版權所有 &#169; Chunghwa Telecom Co., Ltd. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- /footer -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('addDataField').addEventListener('click', function() {
+      const dataFields = document.getElementById('dataFields');
+      const fieldCount = dataFields.getElementsByClassName('data-field').length;
+      const newField = document.createElement('div');
+      newField.className = 'form-group data-field';
+      newField.innerHTML = `<label for="data${fieldCount + 1}">資料${fieldCount + 1}</label>
+                            <input type="text" class="form-control" id="data${fieldCount + 1}" placeholder="請輸入資料${fieldCount + 1}">`;
+      dataFields.appendChild(newField);
+    });
+  
+    document.getElementById('removeDataField').addEventListener('click', function() {
+      const dataFields = document.getElementById('dataFields');
+      const fieldCount = dataFields.getElementsByClassName('data-field').length;
+      if (fieldCount > 1) {
+        dataFields.removeChild(dataFields.lastChild);
+      }
+    });
+    function getCertApplicationCode() {
+      const serviceId = document.getElementById('serviceId').value;
+      // 在此處添加您用於取得憑證申請碼的邏輯
+      // 您可以使用AJAX請求或Fetch API來調用後端服務
+      alert('取得的憑證申請碼: ' + serviceId); // 這裡僅為示範
+    }
+    function showForm() {
+      const selectedValue = document.getElementById('formSelector').value;
+      const forms = document.querySelectorAll('.form-container');
+      forms.forEach(form => {
+          form.style.display = 'none';
+      });
+      if (selectedValue) {
+          document.getElementById(selectedValue).style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

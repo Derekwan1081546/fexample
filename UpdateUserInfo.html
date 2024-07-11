@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>修改使用者資訊</title>
+  <meta property="og:url" content="https://member.cht.com.tw/">
+  <meta property="og:description" content="修改使用者資訊">
+  <meta property="og:image" content="https://web-eshop.cdn.hinet.net/Web/Images/Logo/CHT_logo.jpg">
+  <meta property="og:type" content="website" />
+
+  <!-- faicon -->
+  <link rel="icon" href="https://web-eshop.cdn.hinet.net/eshop/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="192x192" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_192x192.png">
+  <link rel="icon" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link rel="apple-touch-icon-precomposed" sizes="128x128" href="https://web-eshop.cdn.hinet.net/eShop Images/Consumer/Faicon/Faicon_logo_128x128.png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 使用者中心原 css -->
+  <link rel="stylesheet" href="/public/2.0.0/css/style.css">      
+  <link rel="stylesheet" type="text/css" href="https://www.cht.com.tw/home/eshop/css/rwd.css" />
+  <!-- 190808 cht官網樣式 custom -->
+  <link rel="stylesheet" href="/public/4.0.0/css/cht-style.css">
+
+  <!-- javascript def -->
+  <script src="/public/4.0.0/js/vendor.js"></script>
+  <script type="text/javascript" src="/public/2.0.0/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .login-container h1 {
+      margin-bottom: 20px;
+    }
+    .nav-tabs {
+      border-bottom: 2px solid #ddd;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      border-color: #ddd #ddd #fff;
+    }
+    .form-group img {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+    }
+    .footer {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+    text-align: center;
+    }
+
+    .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .footer .misc-links p,
+    .footer .official-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+    .footer .misc-links a,
+    .footer .official-links a {
+    margin: 0 10px;
+    }
+
+    /* .footer .official-links img {
+    max-width: 80px;
+    height: auto;
+    } */
+
+    .footer .copyright {
+    margin-top: 10px;
+    font-size: 0.875em;
+    }
+    .btn-custom {
+    background-color: #3399ff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 40px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px 0;
+    cursor: pointer;
+    }
+
+    .btn-custom:hover {
+    background-color: #267abf;
+    }
+    .text-center {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="cht-style">
+  <!-- 190808 cht官網樣式 header -->
+  <!-- header -->
+  <section class="is-regular" id="header">
+    <header class="nav-global-header">
+      <h1 style="display:none"></h1>
+      <nav class="nav-global">
+        <div class="logo-section">
+          <a class="logo" href="https://www.cht.com.tw/home/consumer"></a>
+        </div>
+      </nav>
+    </header>
+  </section>
+  <div class="container">
+    <div class="login-container">
+      <h1 class="text-center">修改使用者資訊</h1>
+      <form>
+        <div class="form-group">
+          <label for="email">電子郵件</label>
+          <input type="text" class="form-control" id="email" value="example@gmail.com" readonly>
+        </div>
+        <div class="form-group">
+          <label for="username">密碼</label>
+          <input type="password" class="form-control" id="username" placeholder="請輸入密碼">
+        </div>
+        <div class="form-group">
+          <label for="username">電話號碼</label>
+          <input type="text" class="form-control" id="username" placeholder="請輸入電話號碼">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">確認修改</button>
+      </form>
+    </div>
+  </div>
+  <!-- 190808 cht官網樣式 footer -->
+  <!-- footer -->
+  <section class="footer" id="footer">
+    <div class="footer-container">
+      <div class="nekos">
+        <div class="misc-links">
+          <p>
+            <a href="/html/MemberCenter2/agreement_membercenter.html" target="new">中華電信使用者條款</a>
+            <a href="/html/MemberCenter2/privacy.html" target="new">隱私權聲明</a>
+            <a href="https://www.cht.com.tw/en/home/consumer/other/sitemap" target="new">網站地圖</a>
+            <a onclick="javascript:window.open('https://cht.tw/c/wg407');return false;" data-click="g-gtm,g-page-event" href="javascript:void(0);">中華電信APP</a>
+          </p>
+        </div>
+      </div>
+      <div class="nekos">
+        <div class="official-links">
+          <a href="https://www.cht.com.tw/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/cht.png" alt=""></a>
+          <a href="https://www.cht.com.tw/home/consumer/mod-ott/promo/modpromo" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/mod.png" alt=""></a>
+          <a href="https://www.emome.net/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/emome.png" alt=""></a>
+          <a href="https://www.hinet.net/" target="_blank"><img src="https://web-eshop.cdn.hinet.net/eShop Images/other/Official Websites/hinet.png" alt=""></a>
+        </div>
+        <div class="copyright">
+          <p class="miniature">中華電信股份有限公司版權所有 &#169; Chunghwa Telecom Co., Ltd. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- /footer -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
