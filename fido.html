@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>授權使用者簽章</title>
+  <title>FIDO</title>
   <meta property="og:url" content="https://member.cht.com.tw/">
   <meta property="og:description" content="授權使用者簽章">
   <meta property="og:image" content="https://web-eshop.cdn.hinet.net/Web/Images/Logo/CHT_logo.jpg">
@@ -178,6 +178,12 @@
         background-color: #007bff;
         color: #fff;
     }
+    .form-container {
+        display: none;
+    }
+    .form-container.active {
+        display: block;
+    }
 </style>
 </head>
 <body class="cht-style">
@@ -195,173 +201,115 @@
   </section>
   <div class="container">
     <div class="login-container">
-      <ul class="nav nav-tabs tablist" id="loginTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="member-tab" data-toggle="tab" href="#userRequestTicket" role="tab" aria-controls="member" aria-selected="true">授權使用者簽章</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="simple-tab" data-toggle="tab" href="#UserSign" role="tab" aria-controls="simple" aria-selected="false">User簽署</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#UserSignList" role="tab" aria-controls="smart" aria-selected="false">User簽署多筆資料</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#CloudCertApply" role="tab" aria-controls="smart" aria-selected="false">AP以證換證雲端憑證申請</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#APUserCloudCertApply" role="tab" aria-controls="smart" aria-selected="false">合作夥伴使用者憑證申請</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="smart-tab" data-toggle="tab" href="#APSign" role="tab" aria-controls="smart" aria-selected="false">AP簽署</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="loginTabContent">
-        <div class="tab-pane fade show active" id="userRequestTicket" role="tabpanel" aria-labelledby="member-tab">
-            <!-- <h1 class="text-center">授權使用者簽章</h1> -->
+        <select id="formSelector" onchange="showForm()">
+            <option value="form1">FIDO註冊/註銷/重綁OTP</option>
+            <option value="form2">FIDO裝置更換</option>
+            <option value="form3">FIDO認證</option>
+            <option value="form4">查詢註冊綁定FIDO/查詢FIDO認證</option>
+        </select>
+        <br>
+        <br>
+        <div id="form1" class="form-container active">
             <form>
-              <div class="form-group">
-                <label for="email">電子郵件</label>
-                <input type="text" class="form-control" id="email" placeholder="請輸入email" >
-              </div>
-              <div class="form-group">
-                  <label for="username">授權類型</label>
-                  <input type="text" class="form-control" id="username" placeholder="請輸入授權類型">
-              </div>
-              <div class="form-group">
-                <label for="username">憑證序號</label>
-                <input type="password" class="form-control" id="username" placeholder="請輸入憑證序號">
-              </div>
-              <button type="submit" class="btn btn-custom btn-block">簽章</button>
-            </form>
-        </div>
-        <div class="tab-pane fade" id="UserSign" role="tabpanel" aria-labelledby="simple-tab">
-          <!-- 簡訊驗證碼登入表單 -->
-          <form>
-            <div class="form-group">
-              <label for="username">電子郵件</label>
-              <input type="text" class="form-control" id="username" placeholder="請輸入Email">
-            </div>
-            <div class="form-group">
-                <label for="username">資料</label>
-                <input type="text" class="form-control" id="username" placeholder="請輸入資料">
-            </div>
-            <div class="form-group">
-              <label for="username">tid</label>
-              <input type="text" class="form-control" id="username" placeholder="請輸入tid">
-            </div>
-            <div class="form-group">
-                <label for="username">uid</label>
-                <input type="text" class="form-control" id="username" placeholder="請輸入uid">
-            </div>
-            <button type="submit" class="btn btn-custom btn-block">簽章</button>
-          </form>
-          <!-- 這裡可以添加簡訊驗證碼的相關表單 -->
-        </div>
-        <div class="tab-pane fade" id="UserSignList" role="tabpanel" aria-labelledby="smart-tab">
-            <!-- 使用者註冊表單 -->
-            <form id="userForm">
-              <div class="form-group">
-                <label for="email">電子郵件</label>
-                <input type="text" class="form-control" id="email" placeholder="請輸入Email">
-              </div>
-              <div id="dataFields">
-                <div class="form-group data-field">
-                  <label for="data1">資料</label>
-                  <input type="text" class="form-control" id="data1" placeholder="請輸入data">
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="operation" id="register" value="register">
+                        <label class="form-check-label" for="register">註冊</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="operation" id="deregister" value="deregister">
+                        <label class="form-check-label" for="deregister">註銷</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="operation" id="rebind" value="rebind">
+                        <label class="form-check-label" for="rebind">取FIDO載具重綁OTP</label>
+                    </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <button type="button" class="btn btn-secondary" id="addDataField">新增資料</button>
-                <button type="button" class="btn btn-secondary" id="removeDataField">移除資料</button>
-              </div>
-              <div class="form-group">
-                <label for="tid">tid</label>
-                <input type="text" class="form-control" id="tid" placeholder="請輸入tid">
-              </div>
-              <div class="form-group">
-                <label for="uid">uid</label>
-                <input type="text" class="form-control" id="uid" placeholder="請輸入uid">
-              </div>
-              <button type="submit" class="btn btn-custom btn-block">簽章</button>
+                <div class="form-group">
+                    <label for="uid">uid</label>
+                    <input type="text" class="form-control" id="uid" placeholder="請輸入uid">
+                </div>
+                <div class="form-group">
+                    <label for="p7signature">P7簽章</label>
+                    <input type="text" class="form-control" id="p7signature" placeholder="請輸入P7簽章">
+                </div>
+                <div class="form-group">
+                    <label for="certSerialNumber">憑證序號</label>
+                    <input type="text" class="form-control" id="certSerialNumber" placeholder="請輸入憑證序號">
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">確認</button>
             </form>
-            <!-- 這裡可以添加使用者註冊的相關表單 -->
         </div>
-        <div class="tab-pane fade" id="CloudCertApply" role="tabpanel" aria-labelledby="simple-tab">
-          <!-- 公鑰綁定登入表單 -->
-          <form>
-            <div class="form-group">
-              <label for="username">P7簽章</label>
-              <input type="text" class="form-control" id="username" placeholder="請輸入P7簽章">
-            </div>
-            <div class="form-group">
-              <label for="username">憑證序號</label>
-              <input type="text" class="form-control" id="username" placeholder="請輸入憑證序號">
-            </div>
-            <button type="submit" class="btn btn-custom btn-block">申請</button>
-          </form>
-          <!-- 這裡可以添加公鑰綁定的相關表單 -->
-        </div>
-        <div class="tab-pane fade" id="APUserCloudCertApply" role="tabpanel" aria-labelledby="simple-tab">
-          <!-- 公鑰綁定登入登入表單 -->
-          <form>
-            <div class="form-group">
-                <label for="username">電子郵件</label>
-                <input type="text" class="form-control" id="email" placeholder="請輸入email">
-            </div>
-            <div class="form-group">
-                <label for="p7signature">P7簽章</label>
-                <input type="text" class="form-control" id="p7signature" placeholder="請輸入P7簽章">
-            </div>
-            <div class="form-group">
-                <label for="certSerialNumber">憑證序號</label>
-                <input type="text" class="form-control" id="certSerialNumber" placeholder="請輸入憑證序號">
-            </div>
-            <div class="form-group">
-                <label for="clusterid">clusterid</label>
-                <input type="text" class="form-control" id="clusterid" placeholder="請輸入clusterid">
-            </div>
-            <div class="form-group">
-                <label for="validPIN">validPIN</label>
-                <input type="text" class="form-control" id="validPIN" placeholder="請輸入validPIN">
-            </div>
-            <div class="form-group">
-                <label for="certApplicationCode">憑證申請碼</label>
-                <input type="text" class="form-control" id="certApplicationCode" placeholder="請輸入憑證申請碼">
-            </div>
-            <div class="form-group">
-              <label for="certType">憑證類別</label>
-              <select class="form-control" id="certType">
-                  <option value="">請選擇憑證類別</option>
-                  <option value="type1">類別1</option>
-                  <option value="type2">類別2</option>
-                  <option value="type3">類別3</option>
-              </select>
-            </div>
-            <div class="form-group">
-                <label for="serviceId">Service ID</label>
-                <input type="text" class="form-control" id="serviceId" placeholder="請輸入Service ID">
-            </div>
-            <button type="button" class="btn btn-secondary" onclick="getCertApplicationCode()">取憑證申請碼</button>
-            <button type="submit" class="btn btn-custom btn-block">申請</button>
-          </form>
-          <!-- 這裡可以添加公鑰綁定登入的相關表單 -->
-        </div>
-        <div class="tab-pane fade" id="APSign" role="tabpanel" aria-labelledby="simple-tab">
-            <!-- 公鑰綁定登入登入表單 -->
+
+        <div id="form2" class="form-container">
             <form>
-              <div class="form-group">
-                <label for="username">P7簽章</label>
-                <input type="text" class="form-control" id="username" placeholder="請輸入P7簽章">
-              </div>
-              <div class="form-group">
-                <label for="username">憑證序號</label>
-                <input type="text" class="form-control" id="username" placeholder="請輸入憑證序號">
-              </div>
-              <button type="submit" class="btn btn-custom btn-block">簽章</button>
+                <div class="form-group">
+                    <label for="uid">uid</label>
+                    <input type="text" class="form-control" id="uid" placeholder="請輸入uid">
+                </div>
+                <div class="form-group">
+                    <label for="otp">otp驗證碼</label>
+                    <input type="text" class="form-control" id="otp" placeholder="請輸入otp驗證碼">
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">更換</button>
             </form>
-            <!-- 這裡可以添加公鑰綁定登入的相關表單 -->
         </div>
-      </div>
+
+        <div id="form3" class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="uid">uid</label>
+                    <input type="text" class="form-control" id="uid" placeholder="請輸入uid">
+                </div>
+                <div class="form-group">
+                    <label for="email">電子郵件</label>
+                    <input type="text" class="form-control" id="email" placeholder="請輸入email">
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">認證</button>
+            </form>
+        </div>
+
+        <div id="form4" class="form-container">
+            <form>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="operation" id="selectregister" value="selectregister" onclick="toggleEmailField()">
+                    <label class="form-check-label" for="selectregister">查詢註冊綁定FIDO</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="operation" id="AUTH" value="AUTH" onclick="toggleEmailField()">
+                    <label class="form-check-label" for="AUTH">FIDO認證</label>
+                </div>
+                <div class="form-group">
+                    <label for="uid">uid</label>
+                    <input type="text" class="form-control" id="uid" placeholder="請輸入uid">
+                </div>
+                <div class="form-group" id="emailField" style="display: none;">
+                    <label for="email">email</label>
+                    <input type="email" class="form-control" id="email" placeholder="請輸入email">
+                </div>
+                <div class="form-group">
+                    <label for="code">code</label>
+                    <input type="text" class="form-control" id="code" placeholder="請輸入code">
+                </div>
+                <div class="form-group">
+                    <label for="state">state</label>
+                    <input type="text" class="form-control" id="state" placeholder="請輸入state">
+                </div>
+                <div class="form-group">
+                    <label for="transactionId">transactionId</label>
+                    <input type="text" class="form-control" id="transactionId" placeholder="請輸入transactionId">
+                </div>
+                <div class="form-group">
+                    <label for="error">error</label>
+                    <input type="text" class="form-control" id="error" placeholder="請輸入error">
+                </div>
+                <div class="form-group">
+                    <label for="errorDescription">errorDescription</label>
+                    <input type="text" class="form-control" id="errorDescription" placeholder="請輸入errorDescription">
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">查詢</button>
+            </form>
+        </div>
     </div>
   </div>
   <!-- 190808 cht官網樣式 footer -->
@@ -430,6 +378,27 @@
           document.getElementById(selectedValue).style.display = 'block';
       }
     }
+    function showForm1() {
+        const selectedValue = document.getElementById('formSelector').value;
+        const forms = document.querySelectorAll('.form-container');
+        forms.forEach(form => {
+            form.classList.remove('active');
+        });
+        if (selectedValue) {
+            document.getElementById(selectedValue).classList.add('active');
+        }
+    }
+
+    function toggleEmailField() {
+        const isAuthSelected = document.getElementById('AUTH').checked;
+        const emailField = document.getElementById('emailField');
+        if (isAuthSelected) {
+            emailField.style.display = 'block';
+        } else {
+            emailField.style.display = 'none';
+        }
+    }
+
   </script>
 </body>
 </html>
