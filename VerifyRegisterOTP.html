@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>修改使用者資訊</title>
+  <title>註冊驗證OTP</title>
   <meta property="og:url" content="https://member.cht.com.tw/">
   <meta property="og:description" content="修改使用者資訊">
   <meta property="og:image" content="https://web-eshop.cdn.hinet.net/Web/Images/Logo/CHT_logo.jpg">
@@ -127,21 +127,21 @@
   </section>
   <div class="container">
     <div class="login-container">
-      <h1 class="text-center">修改使用者資訊</h1>
+      <h1 class="text-center">註冊驗證OTP</h1>
       <form>
         <div class="form-group">
           <label for="email">電子郵件</label>
-          <input type="text" class="form-control" id="email" value="example@gmail.com" readonly>
+          <input type="text" class="form-control" id="email" placeholder="請輸入Email">
         </div>
         <div class="form-group">
-          <label for="username">密碼</label>
-          <input type="password" class="form-control" id="username" placeholder="請輸入密碼">
+          <label for="otp">otp驗證碼</label>
+          <input type="password" class="form-control" id="otp" placeholder="請輸入otp驗證碼">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="username">電話號碼</label>
           <input type="text" class="form-control" id="username" placeholder="請輸入電話號碼">
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">確認修改</button>
+        </div> -->
+        <button type="submit" class="btn btn-primary btn-block">驗證</button>
       </form>
     </div>
   </div>
