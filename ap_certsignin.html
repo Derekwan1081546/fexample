@@ -197,6 +197,9 @@
     <div class="login-container">
       <ul class="nav nav-tabs tablist" id="loginTab" role="tablist">
         <li class="nav-item">
+          <a class="nav-link" id="smart-tab" data-toggle="tab" href="#UserCloudCertApply" role="tab" aria-controls="smart" aria-selected="false">User以證換證雲端憑證申請</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" id="member-tab" data-toggle="tab" href="#userRequestTicket" role="tab" aria-controls="member" aria-selected="true">授權使用者簽章</a>
         </li>
         <li class="nav-item">
@@ -233,6 +236,38 @@
               </div>
               <button type="submit" class="btn btn-custom btn-block">簽章</button>
             </form>
+        </div>
+        <div class="tab-pane fade" id="UserCloudCertApply" role="tabpanel" aria-labelledby="simple-tab">
+          <!-- 公鑰綁定登入表單 -->
+          <form>
+            <div class="form-group">
+              <label for="username">P7簽章</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入P7簽章">
+            </div>
+            <div class="form-group">
+              <label for="username">憑證序號</label>
+              <input type="text" class="form-control" id="username" placeholder="請輸入憑證序號">
+            </div>
+            <div class="form-group">
+              <label for="clusterid">clusterid</label>
+              <input type="text" class="form-control" id="clusterid" placeholder="請輸入clusterid">
+            </div>
+            <div class="form-group">
+              <label for="validPIN">validPIN</label>
+              <input type="text" class="form-control" id="validPIN" placeholder="請輸入validPIN">
+            </div>
+            <div class="form-group">
+              <label for="cerapplycode">cerapplycode</label>
+              <input type="text" class="form-control" id="cerapplycode" placeholder="請輸入cerapplycode">
+            </div>
+            <div class="form-group">
+              <label for="serviceId">serviceId</label>
+              <input type="text" class="form-control" id="serviceId" placeholder="請輸入serviceId">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">取得產製憑證申請碼</button>
+            <button type="submit" class="btn btn-custom btn-block">申請</button>
+          </form>
+          <!-- 這裡可以添加公鑰綁定的相關表單 -->
         </div>
         <div class="tab-pane fade" id="UserSign" role="tabpanel" aria-labelledby="simple-tab">
           <!-- 簡訊驗證碼登入表單 -->
